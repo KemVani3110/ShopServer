@@ -13,4 +13,9 @@ export class ItemService {
   {
     return this.http.get(`${environment.api_url}item`);
   }
+
+  postFood(body: any)
+  {
+    return this.http.post(`${environment.api_url}item/create`,body).subscribe();
+  }
 }

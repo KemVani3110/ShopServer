@@ -1,0 +1,21 @@
+
+  <div id="peace">
+    <form id="container">
+      <input class="head" type="text" name="id" [(ngModel)]="id" placeholder="ID">
+      <input class="head" type="text" name="name" [(ngModel)]="name" placeholder="Name of food">
+      <input class="head" type="text" name="dicription" [(ngModel)]="dicription" placeholder="Your dicription">
+      <div id="btn-holder">
+        <button class="btn" (click)="postFood()">CREATE</button>
+        <button class="btn" (click)="getall()">GET ALL</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="item-container">
+    <div id="item" *ngFor="let item of (food$|async)">
+      <div class="info">ID: {{item.id}}</div>
+      <div class="info">Name: {{item.name}}</div>
+      <div class="info">Dicription: {{item.dicription}}</div>
+    </div>
+  </div>
+
